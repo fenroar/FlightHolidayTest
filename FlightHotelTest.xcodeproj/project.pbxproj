@@ -30,6 +30,7 @@
 		D03A42BC1DE63EC200C88642 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03A42BB1DE63EC200C88642 /* MainViewController.xib */; };
 		D03A42BF1DE643C200C88642 /* Booking.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42BE1DE643C200C88642 /* Booking.m */; };
 		D03A42C11DE644F700C88642 /* BookingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42C01DE644F700C88642 /* BookingTests.m */; };
+		D03A42C41DE650C000C88642 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42C31DE650C000C88642 /* UIViewController+Alert.m */; };
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
@@ -92,6 +93,8 @@
 		D03A42BD1DE643C200C88642 /* Booking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Booking.h; sourceTree = "<group>"; };
 		D03A42BE1DE643C200C88642 /* Booking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Booking.m; sourceTree = "<group>"; };
 		D03A42C01DE644F700C88642 /* BookingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingTests.m; sourceTree = "<group>"; };
+		D03A42C21DE650C000C88642 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		D03A42C31DE650C000C88642 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		D0D907C31DE5AA580041A4D6 /* FlightHotelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHotelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 			children = (
 				D03A427A1DE5BBA300C88642 /* MTLModel+Transform.h */,
 				D03A427B1DE5BBA300C88642 /* MTLModel+Transform.m */,
+				D03A42C21DE650C000C88642 /* UIViewController+Alert.h */,
+				D03A42C31DE650C000C88642 /* UIViewController+Alert.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				D0D907FC1DE5AF660041A4D6 /* Flight.m in Sources */,
 				D03A42BF1DE643C200C88642 /* Booking.m in Sources */,
 				D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */,
+				D03A42C41DE650C000C88642 /* UIViewController+Alert.m in Sources */,
 				D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */,
 				D03A42BA1DE63EB300C88642 /* MainViewController.m in Sources */,
 				D03A42A51DE6341B00C88642 /* HotelTableViewCell.m in Sources */,

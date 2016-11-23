@@ -8,6 +8,8 @@
 
 #import "CommonDataController.h"
 
+@class Flight;
+
 @protocol FlightsDataControllerDelegate;
 
 @interface FlightsDataController : CommonDataController
@@ -19,5 +21,7 @@
 @end
 
 @protocol FlightsDataControllerDelegate <NSObject>
+
+- (void)dataController:(nonnull FlightsDataController *)dataController didSelectFlight:(nonnull Flight *)flight;
 
 @end

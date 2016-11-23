@@ -111,4 +111,14 @@
     return 120;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    if ([self.delegate respondsToSelector:@selector(dataController:didSelectHotel:)]) {
+        Hotel *hotel = self.hotels[indexPath.row];
+        [self.delegate dataController:self didSelectHotel:hotel];
+    }
+}
+
 @end

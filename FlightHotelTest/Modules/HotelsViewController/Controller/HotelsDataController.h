@@ -10,8 +10,18 @@
 
 @class Hotel;
 
+@protocol HotelsDataControllerDelegate;
+
 @interface HotelsDataController : CommonDataController
 
 @property (nonatomic, strong, readonly, nonnull) NSArray<Hotel *> *hotels;
+
+@property (weak, nonatomic, nullable) id<HotelsDataControllerDelegate> delegate;
+
+@end
+
+@protocol HotelsDataControllerDelegate <NSObject>
+
+- (void)dataController:(nonnull HotelsDataController *)dataController didSelectHotel:(nonnull Hotel *)hotel;
 
 @end

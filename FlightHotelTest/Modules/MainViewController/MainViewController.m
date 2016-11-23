@@ -7,11 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import "UIViewController+Alert.h"
 #import "FlightsViewController.h"
 #import "HotelsViewController.h"
 #import "Booking.h"
 
-@interface MainViewController () <BookingDelegate>
+@interface MainViewController () <BookingDelegate, FlightsDataControllerDelegate, HotelsDataControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *selectedFlightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *selectedHotelLabel;
@@ -42,8 +43,10 @@
     self.booking.delegate = self;
     
     self.flightsDataController = [FlightsDataController new];
+    self.flightsDataController.delegate = self;
     
     self.hotelsDataController = [HotelsDataController new];
+    self.hotelsDataController.delegate = self;
     
     [self updateUIForBooking:self.booking];
 }
@@ -64,6 +67,21 @@
     [self.navigationController pushViewController:hotelsViewController animated:YES];
 }
 
+- (IBAction)handleBookButtonTap:(id)sender {
+    
+    __weak typeof(self) weakSelf = self;
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"MainViewController - OK")
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+        weakSelf.booking.flight = nil;
+        weakSelf.booking.hotel = nil;
+    }];
+    
+    [self showAlertWithTitle:NSLocalizedString(@"Booked", @"MainViewController - Booked complete title")
+                     message:NSLocalizedString(@"Your booking is complete!", @"MainViewController - Booked complete message")
+                alertActions:@[action]];
+}
+
 #pragma mark - Helpers
 
 - (void)updateUIForBooking:(Booking *)booking {
@@ -73,7 +91,7 @@
     
     BOOL valid = [booking bookingIsValid];
     self.bookingButton.enabled = valid;
-    self.bookingButton.backgroundColor = [UIColor grayColor];
+    self.bookingButton.backgroundColor = valid ? [UIColor blueColor] : [UIColor grayColor];
 }
 
 #pragma mark - BookingDelegate
@@ -81,6 +99,23 @@
 - (void)bookingModified:(Booking *)booking isValid:(BOOL)valid {
  
     [self updateUIForBooking:booking];
+}
+
+#pragma mark - FlightsDataControllerDelegate
+
+- (void)dataController:(FlightsDataController *)dataController
+       didSelectFlight:(Flight *)flight {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    self.booking.flight = flight;
+}
+
+#pragma mark - HotelsDataControllerDelegate
+
+- (void)dataController:(HotelsDataController *)dataController didSelectHotel:(Hotel *)hotel {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    self.booking.hotel = hotel;
 }
 
 @end

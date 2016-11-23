@@ -85,4 +85,14 @@
     return 135;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    if ([self.delegate respondsToSelector:@selector(dataController:didSelectFlight:)]) {
+        Flight *flight = self.flights[indexPath.row];
+        [self.delegate dataController:self didSelectFlight:flight];
+    }
+}
+
 @end

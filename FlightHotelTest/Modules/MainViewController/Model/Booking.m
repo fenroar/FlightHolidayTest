@@ -9,6 +9,7 @@
 #import "Booking.h"
 #import "Hotel.h"
 #import "Flight.h"
+#import "FlightViewModel.h"
 
 NSString * const kNoHotelSelectedMessage = @"No Hotel Selected";
 NSString * const kNoFlightSelectedMessage = @"No Flight Selected";
@@ -44,7 +45,18 @@ NSString * const kNoFlightSelectedMessage = @"No Flight Selected";
     
     if (self.flight) {
         
-        NSString *displayString = self.flight.airline ? self.flight.airline : @"";
+        FlightViewModel *viewModel = [[FlightViewModel alloc] initWithFlight:self.flight];
+        
+        NSMutableString *displayString = @"".mutableCopy;
+        
+        [displayString appendString:[NSString stringWithFormat:@"%@\n", viewModel.sourceDestination]];
+        
+        [displayString appendString:[NSString stringWithFormat:@"%@\n", viewModel.depatureDate]];
+        
+        [displayString appendString:[NSString stringWithFormat:@"%@\n", viewModel.time]];
+        
+        [displayString appendString:[NSString stringWithFormat:@"%@\n", viewModel.price]];
+        
         return [[NSAttributedString alloc] initWithString:displayString
                                                attributes:[self validAttributeDictionary]];
     } else {
