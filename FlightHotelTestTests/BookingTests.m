@@ -49,7 +49,23 @@
     
     booking.flight = flight2;
     XCTAssertTrue(self.validBooking);
+}
+
+- (void)testDisplayString {
     
+    Booking *booking = [Booking new];
+    
+    // No bookings for flights
+    XCTAssertEqualObjects([booking stringForFlightBooking].string, kNoFlightSelectedMessage);
+    booking.flight = [Flight new];
+    // Flight set, shouldn't display the no flight message
+    XCTAssertNotEqualObjects([booking stringForFlightBooking].string, kNoFlightSelectedMessage);
+    
+    // No bookings for hotels
+    XCTAssertEqualObjects([booking stringForHotelBooking].string, kNoHotelSelectedMessage);
+    booking.hotel = [Hotel new];
+    // Hotel set, shouldn't display the no hotel message
+    XCTAssertNotEqualObjects([booking stringForHotelBooking].string, kNoHotelSelectedMessage);
 }
 
 - (void)bookingModifiedIsValid:(BOOL)valid {

@@ -8,21 +8,41 @@
 
 #import "Booking.h"
 
+NSString * const kNoHotelSelectedMessage = @"No Hotel Selected";
+NSString * const kNoFlightSelectedMessage = @"No Flight Selected";
+
 @implementation Booking
 
 - (void)setHotel:(Hotel *)hotel {
     _hotel = hotel;
     
-    if ([self.delegate respondsToSelector:@selector(bookingModifiedIsValid:)]) {
-        [self.delegate bookingModifiedIsValid:false];
-    }
+    [self checkIfValid];
 }
 
 - (void)setFlight:(Flight *)flight {
     _flight = flight;
     
+    [self checkIfValid];
+}
+
+- (NSAttributedString *)stringForHotelBooking {
+    
+    return [[NSAttributedString alloc] initWithString:NSLocalizedString(kNoHotelSelectedMessage, @"Ho Hotel Selected")];
+}
+
+- (NSAttributedString *)stringForFlightBooking {
+    
+    return [[NSAttributedString alloc] initWithString:NSLocalizedString(kNoFlightSelectedMessage, @"Ho Hotel Selected")];
+}
+
+#pragma mark - Private
+
+- (void)checkIfValid {
+    
+    BOOL bookingIsValid = self.hotel && self.flight;
+    
     if ([self.delegate respondsToSelector:@selector(bookingModifiedIsValid:)]) {
-        [self.delegate bookingModifiedIsValid:false];
+        [self.delegate bookingModifiedIsValid:bookingIsValid];
     }
 }
 
