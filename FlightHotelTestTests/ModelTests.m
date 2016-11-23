@@ -68,11 +68,11 @@
     
     FlightViewModel *flightViewModel = [[FlightViewModel alloc] initWithFlight:flight];
     
-    XCTAssertEqual(flightViewModel.sourceDestination, @"London Gatwick -> Barcelona");
-    XCTAssertEqual(flightViewModel.depatureDate, @"October 20");
-    XCTAssertEqual(flightViewModel.time, @"Depart: 10:00am, Arrive: 11:00am");
-    XCTAssertEqual(flightViewModel.airline, @"FastJet");
-    XCTAssertEqual(flightViewModel.price, @"£123.67");
+    XCTAssertEqualObjects(flightViewModel.sourceDestination, @"London Gatwick -> Barcelona");
+    XCTAssertEqualObjects(flightViewModel.depatureDate, @"Oct 20, 2016");
+    XCTAssertEqualObjects(flightViewModel.time, @"11:00 AM - 12:00 PM");
+    XCTAssertEqualObjects(flightViewModel.airline, @"FastJet");
+    XCTAssertEqualObjects(flightViewModel.price, @"£123.67");
     
 }
 
