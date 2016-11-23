@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C024A65B06FDCBD2CFA7EFE8 /* libPods-FlightHotelTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5E54FFB4420E1BDE53C53D /* libPods-FlightHotelTest.a */; };
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E5E54FFB4420E1BDE53C53D /* libPods-FlightHotelTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlightHotelTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B77E0A17E70D3D92E4BF5497 /* Pods-FlightHotelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightHotelTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlightHotelTest/Pods-FlightHotelTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D907C31DE5AA580041A4D6 /* FlightHotelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHotelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		D0D907F21DE5AB770041A4D6 /* FlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightsViewController.h; sourceTree = "<group>"; };
 		D0D907F31DE5AB770041A4D6 /* FlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightsViewController.m; sourceTree = "<group>"; };
 		D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightsViewController.xib; sourceTree = "<group>"; };
+		D7299A03DD4F22C6F86C3F06 /* Pods-FlightHotelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightHotelTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightHotelTest/Pods-FlightHotelTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C024A65B06FDCBD2CFA7EFE8 /* libPods-FlightHotelTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		473B13C1B52EDA212CDF3309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E5E54FFB4420E1BDE53C53D /* libPods-FlightHotelTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5C104449583353904D1F186 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B77E0A17E70D3D92E4BF5497 /* Pods-FlightHotelTest.debug.xcconfig */,
+				D7299A03DD4F22C6F86C3F06 /* Pods-FlightHotelTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D0D907BA1DE5AA580041A4D6 = {
 			isa = PBXGroup;
 			children = (
 				D0D907C51DE5AA580041A4D6 /* FlightHotelTest */,
 				D0D907DF1DE5AA580041A4D6 /* FlightHotelTestTests */,
 				D0D907C41DE5AA580041A4D6 /* Products */,
+				C5C104449583353904D1F186 /* Pods */,
+				473B13C1B52EDA212CDF3309 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0D907E51DE5AA580041A4D6 /* Build configuration list for PBXNativeTarget "FlightHotelTest" */;
 			buildPhases = (
+				AD7466FF8C5A86A3E739E99F /* [CP] Check Pods Manifest.lock */,
 				D0D907BF1DE5AA580041A4D6 /* Sources */,
 				D0D907C01DE5AA580041A4D6 /* Frameworks */,
 				D0D907C11DE5AA580041A4D6 /* Resources */,
+				27D556095D34E497D08497B4 /* [CP] Embed Pods Frameworks */,
+				7E88F2E41564386CEAC9702C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +276,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27D556095D34E497D08497B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlightHotelTest/Pods-FlightHotelTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E88F2E41564386CEAC9702C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlightHotelTest/Pods-FlightHotelTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD7466FF8C5A86A3E739E99F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0D907BF1DE5AA580041A4D6 /* Sources */ = {
@@ -383,6 +458,7 @@
 		};
 		D0D907E61DE5AA580041A4D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B77E0A17E70D3D92E4BF5497 /* Pods-FlightHotelTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GWGTXL8GG9;
@@ -395,6 +471,7 @@
 		};
 		D0D907E71DE5AA580041A4D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7299A03DD4F22C6F86C3F06 /* Pods-FlightHotelTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GWGTXL8GG9;
