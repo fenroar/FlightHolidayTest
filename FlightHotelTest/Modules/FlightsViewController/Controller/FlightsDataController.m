@@ -37,17 +37,22 @@
         }
     } else {
         
-        APIClient *client = [APIClient new];
-        [client fetchFlights:^(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error) {
-            
-            self.flights = flights;
-            
-            if (completionBlock) {
-                completionBlock(self.flights, error);
-            }
-        }];
+        [self refreshData:completionBlock];
     }
     
+}
+
+- (void)refreshData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
+    
+    APIClient *client = [APIClient new];
+    [client fetchFlights:^(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error) {
+        
+        self.flights = flights;
+        
+        if (completionBlock) {
+            completionBlock(self.flights, error);
+        }
+    }];
 }
 
 - (NSArray<NSString *> *)cellIdentifiers {

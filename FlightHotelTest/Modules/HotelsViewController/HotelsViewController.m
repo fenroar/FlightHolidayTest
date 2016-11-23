@@ -7,16 +7,12 @@
 //
 
 #import "HotelsViewController.h"
-#import "UIViewController+Alert.h"
 
 @interface HotelsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong, readwrite) HotelsDataController *dataController;
-
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-
 
 @end
 
@@ -56,11 +52,10 @@
     return self.dataController;
 }
 
-#pragma mark - Actions
-
 - (void)refreshData {
     
     [self.dataController refreshData:^(id _Nullable response, NSError * _Nullable error) {
+        
         [self handleResponse:response error:error];
     }];
 }

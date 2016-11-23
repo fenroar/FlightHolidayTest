@@ -7,7 +7,6 @@
 //
 
 #import "FlightsViewController.h"
-#import "UIViewController+Alert.h"
 
 @interface FlightsViewController ()
 
@@ -51,6 +50,14 @@
 
 - (CommonDataController *)currentDataController {
     return self.dataController;
+}
+
+- (void)refreshData {
+    
+    [self.dataController refreshData:^(id _Nullable response, NSError * _Nullable error) {
+       
+        [self handleResponse:response error:error];
+    }];
 }
 
 @end

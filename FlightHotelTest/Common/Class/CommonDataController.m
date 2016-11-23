@@ -18,6 +18,10 @@
     
 }
 
+- (void)refreshData:(void (^ _Nonnull)(id _Nullable, NSError * _Nullable))completionBlock {
+    
+}
+
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
