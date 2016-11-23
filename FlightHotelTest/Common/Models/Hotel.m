@@ -11,7 +11,12 @@
 @implementation Hotel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey  {
-    return @{};
+    return @{ @"name" : @"name",
+              @"locationName" : @"hotel_location",
+              @"descriptive" : @"description",
+              @"images" : @"images",
+              @"rating" : @"rating",
+              @"facilities" : @"facilities" };
 }
 
 @end
