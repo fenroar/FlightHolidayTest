@@ -12,47 +12,47 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlightsTableViewCell" rowHeight="123" id="eZE-DA-Zdh" customClass="FlightsTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="417" height="145"/>
+            <rect key="frame" x="0.0" y="0.0" width="417" height="121"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eZE-DA-Zdh" id="3di-a5-iZA">
-                <rect key="frame" x="0.0" y="0.0" width="417" height="144"/>
+                <rect key="frame" x="0.0" y="0.0" width="417" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight From -&gt; Flight To" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmH-Kf-Czr">
-                        <rect key="frame" x="10" y="10" width="317" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="10" y="10" width="317" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-2b-TwE">
-                        <rect key="frame" x="10" y="47" width="317" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depart: Time, Arrive: Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2l-fG-2MN">
-                        <rect key="frame" x="10" y="76" width="317" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-mq-fGx">
-                        <rect key="frame" x="10" y="113" width="317" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" text="£Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98r-s4-iVY">
-                        <rect key="frame" x="347" y="10" width="60" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" text="£Price" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98r-s4-iVY">
+                        <rect key="frame" x="343" y="10" width="63.5" height="26.5"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="HEn-rn-8jx"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-2b-TwE">
+                        <rect key="frame" x="10" y="41.5" width="317" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depart: Time, Arrive: Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2l-fG-2MN">
+                        <rect key="frame" x="10" y="59.5" width="317" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-mq-fGx">
+                        <rect key="frame" x="10" y="93.5" width="317" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxV-12-MwX">
-                        <rect key="frame" x="0.0" y="142.5" width="417" height="2"/>
+                        <rect key="frame" x="0.0" y="118.5" width="417" height="2"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="Mcf-9d-4lb"/>
@@ -64,12 +64,12 @@
                     <constraint firstItem="lmH-Kf-Czr" firstAttribute="top" secondItem="3di-a5-iZA" secondAttribute="top" constant="10" id="D20-HW-5GJ"/>
                     <constraint firstItem="D2l-fG-2MN" firstAttribute="trailing" secondItem="OwX-2b-TwE" secondAttribute="trailing" id="DwI-5D-Cj8"/>
                     <constraint firstItem="lCZ-mq-fGx" firstAttribute="trailing" secondItem="D2l-fG-2MN" secondAttribute="trailing" id="ESr-4x-UmM"/>
-                    <constraint firstAttribute="bottom" secondItem="lCZ-mq-fGx" secondAttribute="bottom" constant="10" id="H49-tb-G4i"/>
                     <constraint firstItem="lCZ-mq-fGx" firstAttribute="top" secondItem="D2l-fG-2MN" secondAttribute="bottom" constant="16" id="HCr-qW-CaH"/>
-                    <constraint firstItem="OwX-2b-TwE" firstAttribute="top" secondItem="lmH-Kf-Czr" secondAttribute="bottom" constant="16" id="KYl-mQ-4PL"/>
+                    <constraint firstItem="OwX-2b-TwE" firstAttribute="top" secondItem="lmH-Kf-Czr" secondAttribute="bottom" constant="6" id="KYl-mQ-4PL"/>
+                    <constraint firstAttribute="bottom" secondItem="lCZ-mq-fGx" secondAttribute="bottom" constant="10" id="L19-YV-nz2"/>
                     <constraint firstItem="lCZ-mq-fGx" firstAttribute="leading" secondItem="D2l-fG-2MN" secondAttribute="leading" id="RPi-kp-NXD"/>
-                    <constraint firstItem="98r-s4-iVY" firstAttribute="leading" secondItem="lmH-Kf-Czr" secondAttribute="trailing" constant="20" id="S86-5t-Nsf"/>
-                    <constraint firstItem="D2l-fG-2MN" firstAttribute="top" secondItem="OwX-2b-TwE" secondAttribute="bottom" constant="8" id="Wtl-tm-KSI"/>
+                    <constraint firstItem="98r-s4-iVY" firstAttribute="leading" secondItem="lmH-Kf-Czr" secondAttribute="trailing" constant="16.5" id="S86-5t-Nsf"/>
+                    <constraint firstItem="D2l-fG-2MN" firstAttribute="top" secondItem="OwX-2b-TwE" secondAttribute="bottom" id="Wtl-tm-KSI"/>
                     <constraint firstItem="98r-s4-iVY" firstAttribute="top" secondItem="3di-a5-iZA" secondAttribute="top" constant="10" id="aAA-Md-SE9"/>
                     <constraint firstItem="nxV-12-MwX" firstAttribute="leading" secondItem="3di-a5-iZA" secondAttribute="leading" id="avc-pg-MvD"/>
                     <constraint firstItem="OwX-2b-TwE" firstAttribute="leading" secondItem="3di-a5-iZA" secondAttribute="leading" constant="10" id="kA5-lh-x9u"/>
