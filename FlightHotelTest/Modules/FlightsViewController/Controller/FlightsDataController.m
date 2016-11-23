@@ -28,25 +28,23 @@
 
 #pragma mark - Public
 
-- (void)fetchData:(void (^ _Nullable)())completionBlock {
+- (void)fetchData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
     
     if (self.flights.count > 0) {
         
         if (completionBlock) {
-            completionBlock();
+            completionBlock(self.flights, nil);
         }
     } else {
         
         APIClient *client = [APIClient new];
         [client fetchFlights:^(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error) {
             
-            if (error) {
-                NSLog(@"%@", error.localizedDescription);
-            } else {
-                self.flights = flights;
-            }
+            self.flights = flights;
             
-            if (completionBlock) { completionBlock(); }
+            if (completionBlock) {
+                completionBlock(self.flights, error);
+            }
         }];
     }
     

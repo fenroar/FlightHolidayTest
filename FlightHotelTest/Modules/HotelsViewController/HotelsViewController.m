@@ -7,12 +7,15 @@
 //
 
 #import "HotelsViewController.h"
+#import "UIViewController+Alert.h"
 
 @interface HotelsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong, readwrite) HotelsDataController *dataController;
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
 @end
@@ -37,23 +40,29 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.dataController fetchData:^{
-        [self.tableView reloadData];
+    [self.dataController fetchData:^(id  _Nullable response, NSError * _Nullable error) {
+        
+        [self handleResponse:response error:error];
     }];
 }
 
 - (void)setup {
+    [super setup];
     
     self.title = NSLocalizedString(@"Hotels", @"HotelsViewController - Title");
+}
+
+- (CommonDataController *)currentDataController {
+    return self.dataController;
+}
+
+#pragma mark - Actions
+
+- (void)refreshData {
     
-    for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
-        
-        [self.tableView registerNib:[UINib nibWithNibName:cellIdentifier bundle:nil] forCellReuseIdentifier:cellIdentifier];
-    }
-    
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.delegate = self.dataController;
-    self.tableView.dataSource = self.dataController;
+    [self.dataController refreshData:^(id _Nullable response, NSError * _Nullable error) {
+        [self handleResponse:response error:error];
+    }];
 }
 
 @end

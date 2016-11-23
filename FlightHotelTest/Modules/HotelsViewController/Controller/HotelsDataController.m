@@ -29,27 +29,30 @@
 
 #pragma mark - Public
 
-- (void)fetchData:(void (^ _Nullable)())completionBlock {
+- (void)fetchData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
     
     if (self.hotels.count > 0) {
         
         if (completionBlock) {
-            completionBlock();
+            completionBlock(self.hotels, nil);
         }
     } else {
         
-        APIClient *client = [APIClient new];
-        [client fetchHotels:^(NSArray<Hotel *> * _Nonnull hotels, NSError * _Nullable error) {
-            
-            if (error) {
-                NSLog(@"%@", error.localizedDescription);
-            } else {
-                self.hotels = hotels;
-            }
-            
-            if (completionBlock) { completionBlock(); }
-        }];
+        [self refreshData:completionBlock];
     }
+}
+
+- (void)refreshData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
+    
+    APIClient *client = [APIClient new];
+    [client fetchHotels:^(NSArray<Hotel *> * _Nonnull hotels, NSError * _Nullable error) {
+        
+        self.hotels = hotels;
+        
+        if (completionBlock) {
+            completionBlock(self.hotels, error);
+        }
+    }];
 }
 
 - (NSArray<NSString *> *)cellIdentifiers {

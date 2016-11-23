@@ -17,13 +17,13 @@
 
 @implementation MockFlightsDataController
 
-- (void)fetchData:(void (^)())completionBlock {
+- (void)fetchData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
     
     Flight *mockFlight = [Flight new];
     
     self.flights = @[mockFlight];
     
-    if (completionBlock) { completionBlock(); }
+    if (completionBlock) { completionBlock(nil, nil); }
 }
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright © 2016 fenroar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonListViewController.h"
 #import "FlightsDataController.h"
 
-@interface FlightsViewController : UIViewController
+@interface FlightsViewController : CommonListViewController
 
 @property (nonatomic, strong, readonly) FlightsDataController *dataController;
 

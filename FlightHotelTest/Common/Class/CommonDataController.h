@@ -12,6 +12,6 @@
 
 - (nonnull NSArray<NSString *> *)cellIdentifiers;
 
-- (void)fetchData:(void (^ _Nullable)())completionBlock;
+- (void)fetchData:(void (^ _Nullable)(id _Nullable response, NSError * _Nullable error))completionBlock;
 
 @end

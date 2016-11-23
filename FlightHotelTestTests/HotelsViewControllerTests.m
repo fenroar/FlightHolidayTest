@@ -39,7 +39,7 @@
     // create the expectation with a nice descriptive message
     XCTestExpectation *expectation = [self expectationWithDescription:@"The request should successfully complete within the specific timeframe."];
     
-    [self.hotelsViewController.dataController fetchData:^{
+    [self.hotelsViewController.dataController fetchData:^(id  _Nullable response, NSError * _Nullable error) {
         
         if (self.hotelsViewController.dataController.hotels.count > 0) {
             [expectation fulfill];

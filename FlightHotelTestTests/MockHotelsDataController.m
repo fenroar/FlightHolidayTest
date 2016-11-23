@@ -17,13 +17,13 @@
 
 @implementation MockHotelsDataController
 
-- (void)fetchData:(void (^)())completionBlock {
+- (void)fetchData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
     
     Hotel *mockHotel = [Hotel new];
     
     self.hotels = @[mockHotel];
     
-    if (completionBlock) { completionBlock(); }
+    if (completionBlock) { completionBlock(nil, nil); }
 }
 
 @end

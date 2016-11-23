@@ -7,6 +7,7 @@
 //
 
 #import "FlightsViewController.h"
+#import "UIViewController+Alert.h"
 
 @interface FlightsViewController ()
 
@@ -36,23 +37,20 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.dataController fetchData:^{
-        [self.tableView reloadData];
+    [self.dataController fetchData:^(id  _Nullable response, NSError * _Nullable error) {
+        
+        [self handleResponse:response error:error];
     }];
 }
 
 - (void)setup {
+    [super setup];
     
     self.title = NSLocalizedString(@"Flights", @"FlightsViewController - Title");
-    
-    for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
-        
-        [self.tableView registerNib:[UINib nibWithNibName:cellIdentifier bundle:nil] forCellReuseIdentifier:cellIdentifier];
-    }
-    
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.delegate = self.dataController;
-    self.tableView.dataSource = self.dataController;
+}
+
+- (CommonDataController *)currentDataController {
+    return self.dataController;
 }
 
 @end

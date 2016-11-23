@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic, nullable) id<HotelsDataControllerDelegate> delegate;
 
+- (void)refreshData:(void (^ _Nonnull)(id _Nullable, NSError * _Nullable))completionBlock;
+
 @end
 
 @protocol HotelsDataControllerDelegate <NSObject>

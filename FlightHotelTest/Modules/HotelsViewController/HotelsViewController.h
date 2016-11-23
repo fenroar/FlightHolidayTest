@@ -6,10 +6,10 @@
 //  Copyright © 2016 fenroar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonListViewController.h"
 #import "HotelsDataController.h"
 
-@interface HotelsViewController : UIViewController
+@interface HotelsViewController : CommonListViewController
 
 @property (nonatomic, strong, readonly) HotelsDataController *dataController;
 
