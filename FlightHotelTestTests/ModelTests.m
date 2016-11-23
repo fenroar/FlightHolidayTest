@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 
 #import "Hotel.h"
+#import "HotelViewModel.h"
 #import "Flight.h"
 #import "FlightViewModel.h"
 
@@ -54,6 +55,34 @@
     XCTAssertNotNil(hotel.facilities);
     
     XCTAssertNil(parseError);
+}
+
+- (void)testHotelViewModel {
+    
+    
+    NSDictionary *responseDictionary = @{ @"name" : @"Hotel Name",
+                                          @"hotel_location" : @"Location Name",
+                                          @"description" : @"Description here",
+                                          @"images" : @[ @"image_url1",
+                                                         @"image_url2"],
+                                          @"rating" : @4,
+                                          @"facilities" : @[ @"24 Hour Reception",
+                                                             @"Aerobics",
+                                                             @"Air Conditioning"]
+                                          };
+    NSError *parseError = nil;
+    
+    Hotel *hotel = [MTLJSONAdapter modelOfClass:[Hotel class]
+                             fromJSONDictionary:responseDictionary
+                                          error:&parseError];
+    
+    HotelViewModel *viewModel = [[HotelViewModel alloc] initWithHotel:hotel];
+    
+    XCTAssertEqualObjects(viewModel.name, @"Hotel Name");
+    XCTAssertEqualObjects(viewModel.location, @"Location Name");
+    XCTAssertEqualObjects(viewModel.rating, @"4.0 / 5.0");
+    XCTAssertEqualObjects(viewModel.imageURL, @"image_url1");
+    
 }
 
 - (void)testFlightViewModel {

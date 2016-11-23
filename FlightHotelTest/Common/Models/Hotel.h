@@ -14,7 +14,7 @@
 @property (nonatomic, copy, readonly, nullable) NSString *locationName;
 @property (nonatomic, copy, readonly, nullable) NSString *descriptive;
 @property (nonatomic, strong, readonly, nullable) NSArray<NSString *> *images;
-@property (nonatomic, readonly) NSInteger rating;
+@property (nonatomic, readonly) double rating;
 @property (nonatomic, strong, readonly, nullable) NSArray<NSString *> *facilities;
 
 @end

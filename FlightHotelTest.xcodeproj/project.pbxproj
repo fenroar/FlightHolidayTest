@@ -17,6 +17,9 @@
 		D03A428A1DE5CCA100C88642 /* MockFlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42891DE5CCA100C88642 /* MockFlightsDataController.m */; };
 		D03A428D1DE5D77D00C88642 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A428C1DE5D77D00C88642 /* APIClient.m */; };
 		D03A42911DE5E40000C88642 /* FlightViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42901DE5E40000C88642 /* FlightViewModel.m */; };
+		D03A429D1DE5EDD400C88642 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A429C1DE5EDD400C88642 /* HotelsViewController.m */; };
+		D03A42A01DE5EDF300C88642 /* HotelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A429F1DE5EDF300C88642 /* HotelViewModel.m */; };
+		D03A42A21DE5F09400C88642 /* HotelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03A42A11DE5F09400C88642 /* HotelsViewController.xib */; };
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
@@ -58,6 +61,11 @@
 		D03A428C1DE5D77D00C88642 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		D03A428F1DE5E40000C88642 /* FlightViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightViewModel.h; sourceTree = "<group>"; };
 		D03A42901DE5E40000C88642 /* FlightViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightViewModel.m; sourceTree = "<group>"; };
+		D03A429B1DE5EDD400C88642 /* HotelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelsViewController.h; sourceTree = "<group>"; };
+		D03A429C1DE5EDD400C88642 /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsViewController.m; sourceTree = "<group>"; };
+		D03A429E1DE5EDF300C88642 /* HotelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewModel.h; sourceTree = "<group>"; };
+		D03A429F1DE5EDF300C88642 /* HotelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewModel.m; sourceTree = "<group>"; };
+		D03A42A11DE5F09400C88642 /* HotelsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelsViewController.xib; sourceTree = "<group>"; };
 		D0D907C31DE5AA580041A4D6 /* FlightHotelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHotelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -164,6 +172,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D03A42951DE5EDA600C88642 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D03A42961DE5EDA600C88642 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D03A429E1DE5EDF300C88642 /* HotelViewModel.h */,
+				D03A429F1DE5EDF300C88642 /* HotelViewModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D03A42971DE5EDA600C88642 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D0D907BA1DE5AA580041A4D6 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +296,12 @@
 		D0D907F11DE5AB6B0041A4D6 /* HotelsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D03A42961DE5EDA600C88642 /* Model */,
+				D03A42971DE5EDA600C88642 /* View */,
+				D03A42951DE5EDA600C88642 /* Controller */,
+				D03A429B1DE5EDD400C88642 /* HotelsViewController.h */,
+				D03A429C1DE5EDD400C88642 /* HotelsViewController.m */,
+				D03A42A11DE5F09400C88642 /* HotelsViewController.xib */,
 			);
 			path = HotelsViewController;
 			sourceTree = "<group>";
@@ -362,6 +399,7 @@
 				D0D907F61DE5AB850041A4D6 /* FlightsViewController.xib in Resources */,
 				D03A42871DE5C73500C88642 /* FlightsTableViewCell.xib in Resources */,
 				D0D907D61DE5AA580041A4D6 /* LaunchScreen.storyboard in Resources */,
+				D03A42A21DE5F09400C88642 /* HotelsViewController.xib in Resources */,
 				D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +520,9 @@
 				D03A42851DE5C72E00C88642 /* FlightsTableViewCell.m in Sources */,
 				D03A427C1DE5BBA300C88642 /* MTLModel+Transform.m in Sources */,
 				D03A42911DE5E40000C88642 /* FlightViewModel.m in Sources */,
+				D03A429D1DE5EDD400C88642 /* HotelsViewController.m in Sources */,
 				D0D907C81DE5AA580041A4D6 /* main.m in Sources */,
+				D03A42A01DE5EDF300C88642 /* HotelViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
