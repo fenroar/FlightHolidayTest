@@ -6,20 +6,16 @@
 //  Copyright © 2016 fenroar. All rights reserved.
 //
 
-@import UIKit;
+#import "CommonDataController.h"
 #import "FlightsTableViewCell.h"
 
 @protocol FlightsDataControllerDelegate;
 
-@interface FlightsDataController : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface FlightsDataController : CommonDataController
 
 @property (nonatomic, strong, readonly, nonnull) NSArray *flights;
 
 @property (weak, nonatomic, nullable) id<FlightsDataControllerDelegate> delegate;
-
-- (nonnull NSArray<NSString *> *)cellIdentifiers;
-
-- (void)fetchData:(void (^ _Nullable)())completionBlock;
 
 @end
 

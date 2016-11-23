@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HotelsDataController.h"
 
 @interface HotelsViewController : UIViewController
+
+@property (nonatomic, strong, readonly) HotelsDataController *dataController;
+
+- (instancetype)initWithDataController:(HotelsDataController *)dataController;
 
 @end

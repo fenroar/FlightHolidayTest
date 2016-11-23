@@ -9,12 +9,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotelsViewController">
+            <connections>
+                <outlet property="tableView" destination="DjF-v2-LwX" id="5UA-ax-tFg"/>
+                <outlet property="view" destination="RSX-tR-Ooa" id="YvM-5j-bvS"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="RSX-tR-Ooa">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DjF-v2-LwX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DjF-v2-LwX" secondAttribute="bottom" id="Fak-qD-eeE"/>
+                <constraint firstItem="DjF-v2-LwX" firstAttribute="top" secondItem="RSX-tR-Ooa" secondAttribute="top" id="LkK-rP-nuS"/>
+                <constraint firstAttribute="trailing" secondItem="DjF-v2-LwX" secondAttribute="trailing" id="WY7-zM-JBR"/>
+                <constraint firstItem="DjF-v2-LwX" firstAttribute="leading" secondItem="RSX-tR-Ooa" secondAttribute="leading" id="sdG-j6-2KJ"/>
+            </constraints>
         </view>
     </objects>
 </document>

@@ -10,28 +10,47 @@
 
 @interface HotelsViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong, readwrite) HotelsDataController *dataController;
+
+
 @end
 
 @implementation HotelsViewController
 
+- (instancetype)initWithDataController:(HotelsDataController *)dataController {
+    
+    if (self = [super initWithNibName:@"HotelsViewController" bundle:nil]) {
+        self.dataController = dataController;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setup];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.dataController fetchData:^{
+        [self.tableView reloadData];
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setup {
+    
+    for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
+        
+        [self.tableView registerNib:[UINib nibWithNibName:cellIdentifier bundle:nil] forCellReuseIdentifier:cellIdentifier];
+    }
+    
+    self.tableView.delegate = self.dataController;
+    self.tableView.dataSource = self.dataController;
 }
-*/
 
 @end

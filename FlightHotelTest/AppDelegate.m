@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FlightsViewController.h"
+#import "HotelsViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    FlightsDataController *flightsDataController = [FlightsDataController new];
+    HotelsDataController *flightsDataController = [HotelsDataController new];
     
-    FlightsViewController *flightsViewController = [[FlightsViewController alloc] initWithDataController:flightsDataController];
+    HotelsViewController *flightsViewController = [[HotelsViewController alloc] initWithDataController:flightsDataController];
     
     UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:flightsViewController];
     
