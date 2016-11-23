@@ -6,7 +6,7 @@
 //  Copyright © 2016 fenroar. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class Flight;
 @class Hotel;
@@ -26,10 +26,12 @@ extern NSString * const __nonnull kNoFlightSelectedMessage;
 - (nonnull NSAttributedString *)stringForHotelBooking;
 - (nonnull NSAttributedString *)stringForFlightBooking;
 
+- (BOOL)bookingIsValid;
+
 @end
 
 @protocol BookingDelegate <NSObject>
 
-- (void)bookingModifiedIsValid:(BOOL)valid;
+- (void)bookingModified:(nonnull Booking *)booking isValid:(BOOL)valid;
 
 @end

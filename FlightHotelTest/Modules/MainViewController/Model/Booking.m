@@ -7,6 +7,8 @@
 //
 
 #import "Booking.h"
+#import "Hotel.h"
+#import "Flight.h"
 
 NSString * const kNoHotelSelectedMessage = @"No Hotel Selected";
 NSString * const kNoFlightSelectedMessage = @"No Flight Selected";
@@ -27,24 +29,52 @@ NSString * const kNoFlightSelectedMessage = @"No Flight Selected";
 
 - (NSAttributedString *)stringForHotelBooking {
     
-    return [[NSAttributedString alloc] initWithString:NSLocalizedString(kNoHotelSelectedMessage, @"Ho Hotel Selected")];
+    if (self.hotel) {
+        
+        NSString *displayString = self.hotel.name ? self.hotel.name : @"";
+        return [[NSAttributedString alloc] initWithString:displayString
+                                               attributes:[self validAttributeDictionary]];
+    } else {
+        return [[NSAttributedString alloc] initWithString:NSLocalizedString(kNoHotelSelectedMessage, @"No Hotel Selected")
+                attributes:[self invalidAttributeDictionary]];
+    }
 }
 
 - (NSAttributedString *)stringForFlightBooking {
     
-    return [[NSAttributedString alloc] initWithString:NSLocalizedString(kNoFlightSelectedMessage, @"Ho Hotel Selected")];
+    if (self.flight) {
+        
+        NSString *displayString = self.flight.airline ? self.flight.airline : @"";
+        return [[NSAttributedString alloc] initWithString:displayString
+                                               attributes:[self validAttributeDictionary]];
+    } else {
+        return [[NSAttributedString alloc] initWithString:NSLocalizedString(kNoFlightSelectedMessage, @"No Flight Selected")
+                                               attributes:[self invalidAttributeDictionary]];
+    }
+}
+
+- (BOOL)bookingIsValid {
+    
+    return self.hotel && self.flight;
 }
 
 #pragma mark - Private
 
 - (void)checkIfValid {
     
-    BOOL bookingIsValid = self.hotel && self.flight;
-    
-    if ([self.delegate respondsToSelector:@selector(bookingModifiedIsValid:)]) {
-        [self.delegate bookingModifiedIsValid:bookingIsValid];
+    if ([self.delegate respondsToSelector:@selector(bookingModified:isValid:)]) {
+        [self.delegate bookingModified:self isValid:[self bookingIsValid]];
     }
 }
 
+#pragma mark - Helpers
+
+- (NSDictionary *)validAttributeDictionary {
+    return @{ NSForegroundColorAttributeName : [UIColor blackColor]};
+}
+
+- (NSDictionary *)invalidAttributeDictionary {
+    return @{ NSForegroundColorAttributeName : [UIColor lightGrayColor]};
+}
 
 @end

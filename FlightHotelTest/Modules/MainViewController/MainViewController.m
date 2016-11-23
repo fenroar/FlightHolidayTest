@@ -9,11 +9,16 @@
 #import "MainViewController.h"
 #import "FlightsViewController.h"
 #import "HotelsViewController.h"
+#import "Booking.h"
 
-@interface MainViewController ()
+@interface MainViewController () <BookingDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *selectedFlightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *selectedHotelLabel;
+@property (weak, nonatomic) IBOutlet UIButton *bookingButton;
+
+@property (nonatomic, strong) Booking *booking;
 @property (nonatomic, strong) FlightsDataController *flightsDataController;
-
 @property (nonatomic, strong) HotelsDataController *hotelsDataController;
 
 @end
@@ -33,8 +38,14 @@
     
     self.title = NSLocalizedString(@"FlightHoliday", @"MainViewController - Title");
     
+    self.booking = [Booking new];
+    self.booking.delegate = self;
+    
     self.flightsDataController = [FlightsDataController new];
+    
     self.hotelsDataController = [HotelsDataController new];
+    
+    [self updateUIForBooking:self.booking];
 }
 
 #pragma mark - Actions
@@ -51,6 +62,25 @@
     HotelsViewController *hotelsViewController = [[HotelsViewController alloc] initWithDataController:self.hotelsDataController];
     
     [self.navigationController pushViewController:hotelsViewController animated:YES];
+}
+
+#pragma mark - Helpers
+
+- (void)updateUIForBooking:(Booking *)booking {
+    
+    self.selectedHotelLabel.attributedText = [booking stringForHotelBooking];
+    self.selectedFlightLabel.attributedText = [booking stringForFlightBooking];
+    
+    BOOL valid = [booking bookingIsValid];
+    self.bookingButton.enabled = valid;
+    self.bookingButton.backgroundColor = [UIColor grayColor];
+}
+
+#pragma mark - BookingDelegate
+
+- (void)bookingModified:(Booking *)booking isValid:(BOOL)valid {
+ 
+    [self updateUIForBooking:booking];
 }
 
 @end

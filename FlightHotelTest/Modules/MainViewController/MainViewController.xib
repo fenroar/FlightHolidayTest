@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="bookingButton" destination="VtO-rM-ADY" id="gSF-xR-3Wi"/>
+                <outlet property="selectedFlightLabel" destination="lKX-Uv-oej" id="UYh-bN-2KI"/>
+                <outlet property="selectedHotelLabel" destination="dpD-7b-KY4" id="Nea-Eq-9gl"/>
                 <outlet property="view" destination="iaB-nS-r2e" id="4J3-TI-RQC"/>
             </connections>
         </placeholder>

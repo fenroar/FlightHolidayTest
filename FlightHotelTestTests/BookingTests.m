@@ -68,7 +68,9 @@
     XCTAssertNotEqualObjects([booking stringForHotelBooking].string, kNoHotelSelectedMessage);
 }
 
-- (void)bookingModifiedIsValid:(BOOL)valid {
+#pragma mark - BookingDelegate
+
+- (void)bookingModified:(Booking *)booking isValid:(BOOL)valid {
     _validBooking = valid;
 }
 
