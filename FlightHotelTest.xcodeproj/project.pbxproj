@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
-		D0D907CE1DE5AA580041A4D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CD1DE5AA580041A4D6 /* ViewController.m */; };
-		D0D907D11DE5AA580041A4D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D907CF1DE5AA580041A4D6 /* Main.storyboard */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
 		D0D907D61DE5AA580041A4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D41DE5AA580041A4D6 /* LaunchScreen.storyboard */; };
 		D0D907E11DE5AA580041A4D6 /* FlightHotelTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907E01DE5AA580041A4D6 /* FlightHotelTestTests.m */; };
+		D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907F31DE5AB770041A4D6 /* FlightsViewController.m */; };
+		D0D907F61DE5AB850041A4D6 /* FlightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +31,15 @@
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0D907CC1DE5AA580041A4D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D0D907CD1DE5AA580041A4D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D0D907D01DE5AA580041A4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0D907D21DE5AA580041A4D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0D907D51DE5AA580041A4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0D907D71DE5AA580041A4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0D907DC1DE5AA580041A4D6 /* FlightHotelTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightHotelTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907E01DE5AA580041A4D6 /* FlightHotelTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightHotelTestTests.m; sourceTree = "<group>"; };
 		D0D907E21DE5AA580041A4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0D907F21DE5AB770041A4D6 /* FlightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightsViewController.h; sourceTree = "<group>"; };
+		D0D907F31DE5AB770041A4D6 /* FlightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightsViewController.m; sourceTree = "<group>"; };
+		D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +81,10 @@
 		D0D907C51DE5AA580041A4D6 /* FlightHotelTest */ = {
 			isa = PBXGroup;
 			children = (
+				D0D907EB1DE5AB0D0041A4D6 /* Common */,
+				D0D907EF1DE5AB6B0041A4D6 /* Modules */,
 				D0D907C91DE5AA580041A4D6 /* AppDelegate.h */,
 				D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */,
-				D0D907CC1DE5AA580041A4D6 /* ViewController.h */,
-				D0D907CD1DE5AA580041A4D6 /* ViewController.m */,
-				D0D907CF1DE5AA580041A4D6 /* Main.storyboard */,
 				D0D907D21DE5AA580041A4D6 /* Assets.xcassets */,
 				D0D907D41DE5AA580041A4D6 /* LaunchScreen.storyboard */,
 				D0D907D71DE5AA580041A4D6 /* Info.plist */,
@@ -109,6 +108,47 @@
 				D0D907E21DE5AA580041A4D6 /* Info.plist */,
 			);
 			path = FlightHotelTestTests;
+			sourceTree = "<group>";
+		};
+		D0D907EB1DE5AB0D0041A4D6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D0D907EC1DE5AB0D0041A4D6 /* Models */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D0D907EC1DE5AB0D0041A4D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0D907EF1DE5AB6B0041A4D6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D0D907F01DE5AB6B0041A4D6 /* FlightsViewController */,
+				D0D907F11DE5AB6B0041A4D6 /* HotelsViewController */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D0D907F01DE5AB6B0041A4D6 /* FlightsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D0D907F21DE5AB770041A4D6 /* FlightsViewController.h */,
+				D0D907F31DE5AB770041A4D6 /* FlightsViewController.m */,
+				D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */,
+			);
+			path = FlightsViewController;
+			sourceTree = "<group>";
+		};
+		D0D907F11DE5AB6B0041A4D6 /* HotelsViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HotelsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,9 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D907F61DE5AB850041A4D6 /* FlightsViewController.xib in Resources */,
 				D0D907D61DE5AA580041A4D6 /* LaunchScreen.storyboard in Resources */,
 				D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */,
-				D0D907D11DE5AA580041A4D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0D907CE1DE5AA580041A4D6 /* ViewController.m in Sources */,
+				D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */,
 				D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */,
 				D0D907C81DE5AA580041A4D6 /* main.m in Sources */,
 			);
@@ -240,14 +280,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D0D907CF1DE5AA580041A4D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0D907D01DE5AA580041A4D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D0D907D41DE5AA580041A4D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

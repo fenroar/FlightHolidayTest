@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FlightsViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    FlightsViewController *flightsViewController = [[FlightsViewController alloc] initWithNibName:@"FlightsViewController" bundle:nil];
+    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:flightsViewController];
+    
+    self.window.rootViewController = rootNavigationController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
