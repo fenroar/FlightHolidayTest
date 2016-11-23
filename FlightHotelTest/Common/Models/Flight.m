@@ -7,11 +7,30 @@
 //
 
 #import "Flight.h"
+#import "MTLModel+Transform.h"
 
 @implementation Flight
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey  {
-    return @{};
+    return @{ @"airline" : @"airline",
+              @"departureDate" : @"departure_date",
+              @"arrivalDate" : @"arrival_date",
+              @"price" : @"price",
+              @"departureAirport" : @"departure_airport",
+              @"arrivalAirport" : @"arrival_airport"
+              };
+}
+
++ (NSValueTransformer *)priceJSONTransformer {
+    return [self priceTransformer];
+}
+
++ (NSValueTransformer *)departureDateJSONTransformer {
+    return [self iso8601ToDateTransformer];
+}
+
++ (NSValueTransformer *)arrivalDateJSONTransformer {
+    return [self iso8601ToDateTransformer];
 }
 
 @end

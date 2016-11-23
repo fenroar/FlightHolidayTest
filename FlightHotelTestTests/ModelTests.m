@@ -57,13 +57,7 @@
 
 - (void)testFlightMapping {
     
-    NSDictionary *responseDictionary = @{ @"airline" : @"FastJet",
-                                          @"departure_date" : @"2016-10-20T10:00:00Z",
-                                          @"arrival_date": @"2016-10-20T11:00:00Z",
-                                          @"price": @12300,
-                                          @"departure_airport": @"London Gatwick",
-                                          @"arrival_airport": @"Barcelona"
-                                          };
+    NSDictionary *responseDictionary = [self flightDictionary];
     
     NSError *parseError = nil;
     
@@ -79,7 +73,35 @@
     XCTAssertNotNil(flight.arrivalAirport);
     
     XCTAssertNil(parseError);
+}
+
+- (void)testFlightsMapping {
     
+    NSError *parseError = nil;
+    
+    NSArray *flightsDictionaryArray = @[ [self flightDictionary],
+                                    [self flightDictionary]
+                                    ];
+    
+    NSArray *flights = [MTLJSONAdapter modelsOfClass:[Flight class]
+                                       fromJSONArray:flightsDictionaryArray
+                                               error:&parseError];
+    
+    XCTAssertTrue(flights.count == 2);
+    XCTAssertNil(parseError);
+}
+
+#pragma mark - Helpers
+
+- (NSDictionary *)flightDictionary {
+    
+    return @{ @"airline" : @"FastJet",
+              @"departure_date" : @"2016-10-20T10:00:00Z",
+              @"arrival_date": @"2016-10-20T11:00:00Z",
+              @"price": @12367,
+              @"departure_airport": @"London Gatwick",
+              @"arrival_airport": @"Barcelona"
+              };
 }
 
 @end

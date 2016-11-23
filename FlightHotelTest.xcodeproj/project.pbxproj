@@ -10,6 +10,7 @@
 		BC987A9F17267AE94C380EF1 /* libPods-FlightHotelTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7692730C6043222C1C7F03D8 /* libPods-FlightHotelTestTests.a */; };
 		C024A65B06FDCBD2CFA7EFE8 /* libPods-FlightHotelTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5E54FFB4420E1BDE53C53D /* libPods-FlightHotelTest.a */; };
 		D03A42781DE5B33100C88642 /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42771DE5B33100C88642 /* ModelTests.m */; };
+		D03A427C1DE5BBA300C88642 /* MTLModel+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A427B1DE5BBA300C88642 /* MTLModel+Transform.m */; };
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
@@ -38,6 +39,8 @@
 		B77E0A17E70D3D92E4BF5497 /* Pods-FlightHotelTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightHotelTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlightHotelTest/Pods-FlightHotelTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B8EE395929C444759F2F4B93 /* Pods-FlightHotelTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightHotelTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightHotelTestTests/Pods-FlightHotelTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		D03A42771DE5B33100C88642 /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
+		D03A427A1DE5BBA300C88642 /* MTLModel+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLModel+Transform.h"; sourceTree = "<group>"; };
+		D03A427B1DE5BBA300C88642 /* MTLModel+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLModel+Transform.m"; sourceTree = "<group>"; };
 		D0D907C31DE5AA580041A4D6 /* FlightHotelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHotelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +101,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D03A42791DE5BB9100C88642 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D03A427A1DE5BBA300C88642 /* MTLModel+Transform.h */,
+				D03A427B1DE5BBA300C88642 /* MTLModel+Transform.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D0D907BA1DE5AA580041A4D6 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 		D0D907EB1DE5AB0D0041A4D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D03A42791DE5BB9100C88642 /* Category */,
 				D0D907EC1DE5AB0D0041A4D6 /* Models */,
 			);
 			path = Common;
@@ -403,6 +416,7 @@
 				D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */,
 				D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */,
 				D0D907F91DE5AE430041A4D6 /* Hotel.m in Sources */,
+				D03A427C1DE5BBA300C88642 /* MTLModel+Transform.m in Sources */,
 				D0D907C81DE5AA580041A4D6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
