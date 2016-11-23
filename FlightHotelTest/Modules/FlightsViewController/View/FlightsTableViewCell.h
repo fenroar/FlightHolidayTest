@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FlightViewModel;
+
 @interface FlightsTableViewCell : UITableViewCell
 
-- (void)populateCell;
+- (void)populateCellForViewModel:(FlightViewModel *)viewModel;
 
 @end

@@ -10,6 +10,7 @@
 
 #import "Hotel.h"
 #import "Flight.h"
+#import "FlightViewModel.h"
 
 @interface ModelTests : XCTestCase
 
@@ -53,6 +54,26 @@
     XCTAssertNotNil(hotel.facilities);
     
     XCTAssertNil(parseError);
+}
+
+- (void)testFlightViewModel {
+    
+    NSDictionary *responseDictionary = [self flightDictionary];
+    
+    NSError *parseError = nil;
+    
+    Flight *flight = [MTLJSONAdapter modelOfClass:[Flight class]
+                               fromJSONDictionary:responseDictionary
+                                            error:&parseError];
+    
+    FlightViewModel *flightViewModel = [[FlightViewModel alloc] initWithFlight:flight];
+    
+    XCTAssertEqual(flightViewModel.sourceDestination, @"London Gatwick -> Barcelona");
+    XCTAssertEqual(flightViewModel.depatureDate, @"October 20");
+    XCTAssertEqual(flightViewModel.time, @"Depart: 10:00am, Arrive: 11:00am");
+    XCTAssertEqual(flightViewModel.airline, @"FastJet");
+    XCTAssertEqual(flightViewModel.price, @"£123.67");
+    
 }
 
 - (void)testFlightMapping {

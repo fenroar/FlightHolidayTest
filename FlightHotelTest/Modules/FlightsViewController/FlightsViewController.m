@@ -31,15 +31,13 @@
     [super viewDidLoad];
     
     [self setup];
-    
-    NSLog(@"%ld", [self.tableView numberOfRowsInSection:0]);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self.dataController fetchData:^{
-        NSLog(@"fetchData");
+        [self.tableView reloadData];
     }];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "FlightsTableViewCell.h"
+#import "FlightViewModel.h"
 
 @interface FlightsTableViewCell ()
 
@@ -25,8 +26,13 @@
     [super awakeFromNib];
 }
 
-- (void)populateCell {
+- (void)populateCellForViewModel:(FlightViewModel *)viewModel {
     
+    self.sourceDestinationLabel.text = viewModel.sourceDestination;
+    self.departureDateLabel.text = viewModel.depatureDate;
+    self.timeLabel.text = viewModel.time;
+    self.airlineLabel.text = viewModel.airline;
+    self.priceLabel.text = viewModel.price;
 }
 
 @end

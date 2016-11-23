@@ -15,6 +15,8 @@
 		D03A42851DE5C72E00C88642 /* FlightsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42841DE5C72E00C88642 /* FlightsTableViewCell.m */; };
 		D03A42871DE5C73500C88642 /* FlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03A42861DE5C73500C88642 /* FlightsTableViewCell.xib */; };
 		D03A428A1DE5CCA100C88642 /* MockFlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42891DE5CCA100C88642 /* MockFlightsDataController.m */; };
+		D03A428D1DE5D77D00C88642 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A428C1DE5D77D00C88642 /* APIClient.m */; };
+		D03A42911DE5E40000C88642 /* FlightViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42901DE5E40000C88642 /* FlightViewModel.m */; };
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
@@ -52,6 +54,10 @@
 		D03A42861DE5C73500C88642 /* FlightsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightsTableViewCell.xib; sourceTree = "<group>"; };
 		D03A42881DE5CCA100C88642 /* MockFlightsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockFlightsDataController.h; sourceTree = "<group>"; };
 		D03A42891DE5CCA100C88642 /* MockFlightsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockFlightsDataController.m; sourceTree = "<group>"; };
+		D03A428B1DE5D77D00C88642 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		D03A428C1DE5D77D00C88642 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		D03A428F1DE5E40000C88642 /* FlightViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightViewModel.h; sourceTree = "<group>"; };
+		D03A42901DE5E40000C88642 /* FlightViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightViewModel.m; sourceTree = "<group>"; };
 		D0D907C31DE5AA580041A4D6 /* FlightHotelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHotelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 		D03A427D1DE5C45C00C88642 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				D03A428B1DE5D77D00C88642 /* APIClient.h */,
+				D03A428C1DE5D77D00C88642 /* APIClient.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -145,6 +153,15 @@
 				D03A42861DE5C73500C88642 /* FlightsTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D03A428E1DE5E3F100C88642 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D03A428F1DE5E40000C88642 /* FlightViewModel.h */,
+				D03A42901DE5E40000C88642 /* FlightViewModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D0D907BA1DE5AA580041A4D6 = {
@@ -235,8 +252,9 @@
 		D0D907F01DE5AB6B0041A4D6 /* FlightsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D03A427E1DE5C5E400C88642 /* Controller */,
+				D03A428E1DE5E3F100C88642 /* Model */,
 				D03A427F1DE5C5E400C88642 /* View */,
+				D03A427E1DE5C5E400C88642 /* Controller */,
 				D0D907F21DE5AB770041A4D6 /* FlightsViewController.h */,
 				D0D907F31DE5AB770041A4D6 /* FlightsViewController.m */,
 				D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */,
@@ -459,9 +477,11 @@
 				D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */,
 				D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */,
 				D0D907F91DE5AE430041A4D6 /* Hotel.m in Sources */,
+				D03A428D1DE5D77D00C88642 /* APIClient.m in Sources */,
 				D03A42821DE5C5FB00C88642 /* FlightsDataController.m in Sources */,
 				D03A42851DE5C72E00C88642 /* FlightsTableViewCell.m in Sources */,
 				D03A427C1DE5BBA300C88642 /* MTLModel+Transform.m in Sources */,
+				D03A42911DE5E40000C88642 /* FlightViewModel.m in Sources */,
 				D0D907C81DE5AA580041A4D6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

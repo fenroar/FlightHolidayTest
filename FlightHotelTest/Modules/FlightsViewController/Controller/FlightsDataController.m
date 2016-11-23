@@ -7,6 +7,8 @@
 //
 
 #import "FlightsDataController.h"
+#import "APIClient.h"
+#import "FlightViewModel.h"
 
 @interface FlightsDataController ()
 
@@ -27,7 +29,18 @@
 
 - (void)fetchData:(void (^ _Nullable)())completionBlock {
     
-    if (completionBlock) { completionBlock(); }
+    APIClient *client = [APIClient new];
+    [client fetchFlights:^(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error) {
+       
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else {
+            self.flights = flights;
+        }
+        
+        if (completionBlock) { completionBlock(); }
+    }];
+    
 }
 
 - (NSArray<NSString *> *)cellIdentifiers {
@@ -38,14 +51,17 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.flights.count + 10;
+    return self.flights.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     FlightsTableViewCell *cell = (FlightsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FlightsTableViewCell.class)];
     
-    [cell populateCell];
+    Flight *flight = self.flights[indexPath.row];
+    FlightViewModel *viewModel = [[FlightViewModel alloc] initWithFlight:flight];
+    
+    [cell populateCellForViewModel:viewModel];
     
     return cell;
 }
