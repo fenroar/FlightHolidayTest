@@ -44,7 +44,7 @@
 
 - (void)setup {
     
-    self.title = NSLocalizedString(@"Hotels", nil);
+    self.title = NSLocalizedString(@"Hotels", @"HotelsViewController - Title");
     
     for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
         

@@ -43,7 +43,7 @@
 
 - (void)setup {
     
-    self.title = NSLocalizedString(@"Flights", nil);
+    self.title = NSLocalizedString(@"Flights", @"FlightsViewController - Title");
     
     for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
         

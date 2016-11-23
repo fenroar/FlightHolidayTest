@@ -31,18 +31,25 @@
 
 - (void)fetchData:(void (^ _Nullable)())completionBlock {
     
-    APIClient *client = [APIClient new];
-    [client fetchHotels:^(NSArray<Hotel *> * _Nonnull hotels, NSError * _Nullable error) {
+    if (self.hotels.count > 0) {
         
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        } else {
-            self.hotels = hotels;
+        if (completionBlock) {
+            completionBlock();
         }
+    } else {
         
-        if (completionBlock) { completionBlock(); }
-    }];
-    
+        APIClient *client = [APIClient new];
+        [client fetchHotels:^(NSArray<Hotel *> * _Nonnull hotels, NSError * _Nullable error) {
+            
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+            } else {
+                self.hotels = hotels;
+            }
+            
+            if (completionBlock) { completionBlock(); }
+        }];
+    }
 }
 
 - (NSArray<NSString *> *)cellIdentifiers {

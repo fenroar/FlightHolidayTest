@@ -30,17 +30,25 @@
 
 - (void)fetchData:(void (^ _Nullable)())completionBlock {
     
-    APIClient *client = [APIClient new];
-    [client fetchFlights:^(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error) {
-       
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        } else {
-            self.flights = flights;
-        }
+    if (self.flights.count > 0) {
         
-        if (completionBlock) { completionBlock(); }
-    }];
+        if (completionBlock) {
+            completionBlock();
+        }
+    } else {
+        
+        APIClient *client = [APIClient new];
+        [client fetchFlights:^(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error) {
+            
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+            } else {
+                self.flights = flights;
+            }
+            
+            if (completionBlock) { completionBlock(); }
+        }];
+    }
     
 }
 
