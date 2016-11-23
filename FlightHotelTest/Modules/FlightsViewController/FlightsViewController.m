@@ -43,11 +43,14 @@
 
 - (void)setup {
     
+    self.title = NSLocalizedString(@"Flights", nil);
+    
     for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
         
         [self.tableView registerNib:[UINib nibWithNibName:cellIdentifier bundle:nil] forCellReuseIdentifier:cellIdentifier];
     }
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self.dataController;
     self.tableView.dataSource = self.dataController;
 }

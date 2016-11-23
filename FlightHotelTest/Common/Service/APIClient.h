@@ -11,12 +11,9 @@
 @class Flight;
 @class Hotel;
 
-typedef void (^ _Nullable Success)(id _Nullable element);
-typedef void (^ _Nullable Error)(NSError * _Nonnull error);
-
 @interface APIClient : NSObject
 
 - (void)fetchFlights:(void (^ _Nonnull)(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error))completion;
-- (void)fetchHotels;
+- (void)fetchHotels:(void (^ _Nonnull)(NSArray<Hotel *> * _Nonnull flights, NSError * _Nullable error))completion;
 
 @end

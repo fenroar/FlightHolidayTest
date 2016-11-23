@@ -7,6 +7,15 @@
 //
 
 #import "HotelTableViewCell.h"
+#import "HotelViewModel.h"
+
+@interface HotelTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *hotelNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hotelLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hotelRatingLabel;
+
+@end
 
 @implementation HotelTableViewCell
 
@@ -15,10 +24,11 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)populateCellForViewModel:(HotelViewModel *)viewModel {
+    
+    self.hotelNameLabel.text = viewModel.name;
+    self.hotelLocationLabel.text = viewModel.location;
+    self.hotelRatingLabel.text = viewModel.rating;
 }
 
 @end

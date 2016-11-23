@@ -7,7 +7,6 @@
 //
 
 #import "CommonDataController.h"
-#import "FlightsTableViewCell.h"
 
 @protocol FlightsDataControllerDelegate;
 

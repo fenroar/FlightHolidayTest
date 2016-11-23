@@ -14,7 +14,7 @@
 #import "Hotel.h"
 
 static NSString * const GetFlightsPath = @"https://pastebin.com/raw/bFnZQEx0";
-static NSString * const GetHotelPath = @"http://pastebin.com/raw/f0Tm6bfy";
+static NSString * const GetHotelsPath = @"https://pastebin.com/raw/f0Tm6bfy";
 
 @interface APIClient ()
 
@@ -24,34 +24,9 @@ static NSString * const GetHotelPath = @"http://pastebin.com/raw/f0Tm6bfy";
 
 @implementation APIClient
 
-//+ (instancetype)sharedInstance {
-//    static APIClient *sharedInstance = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        sharedInstance = [[self alloc] init];
-//    });
-//    return sharedInstance;
-//}
-//
-//- (instancetype)init {
-//    
-//    if (self = [super init]) {
-//        
-//        self.sessionManager = [AFHTTPSessionManager alloc] initWithBaseURL: sessionConfiguration:<#(nullable NSURLSessionConfiguration *)#>
-//        
-//        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-//    }
-//    
-//    return self;
-//}
-
 - (void)fetchFlights:(void (^ _Nonnull)(NSArray<Flight *> * _Nonnull flights, NSError * _Nullable error))completion {
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = nil;
+    AFHTTPSessionManager *manager = [self sessionManager];
     
     [manager GET:GetFlightsPath
       parameters:nil
@@ -81,11 +56,45 @@ static NSString * const GetHotelPath = @"http://pastebin.com/raw/f0Tm6bfy";
 }
 
 
-- (void)fetchHotels {
+- (void)fetchHotels:(void (^ _Nonnull)(NSArray<Hotel *> * _Nonnull flights, NSError * _Nullable error))completion {
     
+    AFHTTPSessionManager *manager = [self sessionManager];
+    
+    [manager GET:GetHotelsPath
+      parameters:nil
+        progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            NSDictionary *response = [APIClient parseResponseToDictionary:responseObject];
+            
+            NSError *parseError;
+            Hotel *hotel = [MTLJSONAdapter modelOfClass:Hotel.class fromJSONDictionary:response error:&parseError];
+            
+            if (parseError) {
+                completion(@[], parseError);
+            } else {
+                completion(@[hotel], nil);
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            completion(@[], error);
+        }];
 }
 
 #pragma mark - Helpers
+
+- (AFHTTPSessionManager *)sessionManager {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = nil;
+    
+    return manager;
+}
 
 + (NSDictionary *)parseResponseToDictionary:(id)responseObject {
     

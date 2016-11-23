@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class HotelViewModel;
+
 @interface HotelTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
+
+- (void)populateCellForViewModel:(HotelViewModel *)viewModel;
 
 @end

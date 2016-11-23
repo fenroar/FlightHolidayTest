@@ -7,6 +7,7 @@
 //
 
 #import "FlightsDataController.h"
+#import "FlightsTableViewCell.h"
 #import "APIClient.h"
 #import "FlightViewModel.h"
 
