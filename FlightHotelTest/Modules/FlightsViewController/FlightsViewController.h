@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlightsDataController.h"
 
 @interface FlightsViewController : UIViewController
+
+@property (nonatomic, strong, readonly) FlightsDataController *dataController;
+
+- (instancetype)initWithDataController:(FlightsDataController *)dataController;
 
 @end

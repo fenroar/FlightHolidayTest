@@ -10,18 +10,48 @@
 
 @interface FlightsViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong, readwrite) FlightsDataController *dataController;
+
 @end
 
 @implementation FlightsViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype)initWithDataController:(FlightsDataController *)dataController {
+    
+    if (self = [super initWithNibName:@"FlightsViewController" bundle:nil]) {
+        self.dataController = dataController;
+    }
+    
+    return self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setup];
+    
+    NSLog(@"%ld", [self.tableView numberOfRowsInSection:0]);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.dataController fetchData:^{
+        NSLog(@"fetchData");
+    }];
+}
+
+- (void)setup {
+    
+    for (NSString *cellIdentifier in self.dataController.cellIdentifiers) {
+        
+        [self.tableView registerNib:[UINib nibWithNibName:cellIdentifier bundle:nil] forCellReuseIdentifier:cellIdentifier];
+    }
+    
+    self.tableView.delegate = self.dataController;
+    self.tableView.dataSource = self.dataController;
 }
 
 @end

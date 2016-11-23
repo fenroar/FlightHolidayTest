@@ -11,6 +11,10 @@
 		C024A65B06FDCBD2CFA7EFE8 /* libPods-FlightHotelTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5E54FFB4420E1BDE53C53D /* libPods-FlightHotelTest.a */; };
 		D03A42781DE5B33100C88642 /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42771DE5B33100C88642 /* ModelTests.m */; };
 		D03A427C1DE5BBA300C88642 /* MTLModel+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A427B1DE5BBA300C88642 /* MTLModel+Transform.m */; };
+		D03A42821DE5C5FB00C88642 /* FlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42811DE5C5FB00C88642 /* FlightsDataController.m */; };
+		D03A42851DE5C72E00C88642 /* FlightsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42841DE5C72E00C88642 /* FlightsTableViewCell.m */; };
+		D03A42871DE5C73500C88642 /* FlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03A42861DE5C73500C88642 /* FlightsTableViewCell.xib */; };
+		D03A428A1DE5CCA100C88642 /* MockFlightsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03A42891DE5CCA100C88642 /* MockFlightsDataController.m */; };
 		D0D907C81DE5AA580041A4D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907C71DE5AA580041A4D6 /* main.m */; };
 		D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907CA1DE5AA580041A4D6 /* AppDelegate.m */; };
 		D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D907D21DE5AA580041A4D6 /* Assets.xcassets */; };
@@ -41,6 +45,13 @@
 		D03A42771DE5B33100C88642 /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
 		D03A427A1DE5BBA300C88642 /* MTLModel+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTLModel+Transform.h"; sourceTree = "<group>"; };
 		D03A427B1DE5BBA300C88642 /* MTLModel+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTLModel+Transform.m"; sourceTree = "<group>"; };
+		D03A42801DE5C5FB00C88642 /* FlightsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightsDataController.h; sourceTree = "<group>"; };
+		D03A42811DE5C5FB00C88642 /* FlightsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightsDataController.m; sourceTree = "<group>"; };
+		D03A42831DE5C72E00C88642 /* FlightsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightsTableViewCell.h; sourceTree = "<group>"; };
+		D03A42841DE5C72E00C88642 /* FlightsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightsTableViewCell.m; sourceTree = "<group>"; };
+		D03A42861DE5C73500C88642 /* FlightsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightsTableViewCell.xib; sourceTree = "<group>"; };
+		D03A42881DE5CCA100C88642 /* MockFlightsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockFlightsDataController.h; sourceTree = "<group>"; };
+		D03A42891DE5CCA100C88642 /* MockFlightsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockFlightsDataController.m; sourceTree = "<group>"; };
 		D0D907C31DE5AA580041A4D6 /* FlightHotelTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHotelTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D907C71DE5AA580041A4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0D907C91DE5AA580041A4D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +121,32 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D03A427D1DE5C45C00C88642 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D03A427E1DE5C5E400C88642 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D03A42801DE5C5FB00C88642 /* FlightsDataController.h */,
+				D03A42811DE5C5FB00C88642 /* FlightsDataController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D03A427F1DE5C5E400C88642 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D03A42831DE5C72E00C88642 /* FlightsTableViewCell.h */,
+				D03A42841DE5C72E00C88642 /* FlightsTableViewCell.m */,
+				D03A42861DE5C73500C88642 /* FlightsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D0D907BA1DE5AA580041A4D6 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +196,8 @@
 				D03A42771DE5B33100C88642 /* ModelTests.m */,
 				D0D907E01DE5AA580041A4D6 /* FlightHotelTestTests.m */,
 				D0D907E21DE5AA580041A4D6 /* Info.plist */,
+				D03A42881DE5CCA100C88642 /* MockFlightsDataController.h */,
+				D03A42891DE5CCA100C88642 /* MockFlightsDataController.m */,
 			);
 			path = FlightHotelTestTests;
 			sourceTree = "<group>";
@@ -168,6 +207,7 @@
 			children = (
 				D03A42791DE5BB9100C88642 /* Category */,
 				D0D907EC1DE5AB0D0041A4D6 /* Models */,
+				D03A427D1DE5C45C00C88642 /* Service */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -195,6 +235,8 @@
 		D0D907F01DE5AB6B0041A4D6 /* FlightsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D03A427E1DE5C5E400C88642 /* Controller */,
+				D03A427F1DE5C5E400C88642 /* View */,
 				D0D907F21DE5AB770041A4D6 /* FlightsViewController.h */,
 				D0D907F31DE5AB770041A4D6 /* FlightsViewController.m */,
 				D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */,
@@ -300,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D907F61DE5AB850041A4D6 /* FlightsViewController.xib in Resources */,
+				D03A42871DE5C73500C88642 /* FlightsTableViewCell.xib in Resources */,
 				D0D907D61DE5AA580041A4D6 /* LaunchScreen.storyboard in Resources */,
 				D0D907D31DE5AA580041A4D6 /* Assets.xcassets in Resources */,
 			);
@@ -416,6 +459,8 @@
 				D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */,
 				D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */,
 				D0D907F91DE5AE430041A4D6 /* Hotel.m in Sources */,
+				D03A42821DE5C5FB00C88642 /* FlightsDataController.m in Sources */,
+				D03A42851DE5C72E00C88642 /* FlightsTableViewCell.m in Sources */,
 				D03A427C1DE5BBA300C88642 /* MTLModel+Transform.m in Sources */,
 				D0D907C81DE5AA580041A4D6 /* main.m in Sources */,
 			);
@@ -427,6 +472,7 @@
 			files = (
 				D0D907E11DE5AA580041A4D6 /* FlightHotelTestTests.m in Sources */,
 				D03A42781DE5B33100C88642 /* ModelTests.m in Sources */,
+				D03A428A1DE5CCA100C88642 /* MockFlightsDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

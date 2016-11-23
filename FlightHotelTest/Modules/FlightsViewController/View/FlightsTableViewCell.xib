@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlightsTableViewCell" rowHeight="123" id="eZE-DA-Zdh" customClass="FlightsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="145"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eZE-DA-Zdh" id="3di-a5-iZA">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="144"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight From -&gt; Flight To" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmH-Kf-Czr">
+                        <rect key="frame" x="10" y="10" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-2b-TwE">
+                        <rect key="frame" x="10" y="47" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depart: Time, Arrive: Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2l-fG-2MN">
+                        <rect key="frame" x="10" y="76" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-mq-fGx">
+                        <rect key="frame" x="10" y="113" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" text="£Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98r-s4-iVY">
+                        <rect key="frame" x="347" y="10" width="60" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="HEn-rn-8jx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxV-12-MwX">
+                        <rect key="frame" x="0.0" y="142.5" width="417" height="2"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="Mcf-9d-4lb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="nxV-12-MwX" secondAttribute="trailing" id="7Gl-ie-DBu"/>
+                    <constraint firstItem="lmH-Kf-Czr" firstAttribute="top" secondItem="3di-a5-iZA" secondAttribute="top" constant="10" id="D20-HW-5GJ"/>
+                    <constraint firstItem="D2l-fG-2MN" firstAttribute="trailing" secondItem="OwX-2b-TwE" secondAttribute="trailing" id="DwI-5D-Cj8"/>
+                    <constraint firstItem="lCZ-mq-fGx" firstAttribute="trailing" secondItem="D2l-fG-2MN" secondAttribute="trailing" id="ESr-4x-UmM"/>
+                    <constraint firstAttribute="bottom" secondItem="lCZ-mq-fGx" secondAttribute="bottom" constant="10" id="H49-tb-G4i"/>
+                    <constraint firstItem="lCZ-mq-fGx" firstAttribute="top" secondItem="D2l-fG-2MN" secondAttribute="bottom" constant="16" id="HCr-qW-CaH"/>
+                    <constraint firstItem="OwX-2b-TwE" firstAttribute="top" secondItem="lmH-Kf-Czr" secondAttribute="bottom" constant="16" id="KYl-mQ-4PL"/>
+                    <constraint firstItem="lCZ-mq-fGx" firstAttribute="leading" secondItem="D2l-fG-2MN" secondAttribute="leading" id="RPi-kp-NXD"/>
+                    <constraint firstItem="98r-s4-iVY" firstAttribute="leading" secondItem="lmH-Kf-Czr" secondAttribute="trailing" constant="20" id="S86-5t-Nsf"/>
+                    <constraint firstItem="D2l-fG-2MN" firstAttribute="top" secondItem="OwX-2b-TwE" secondAttribute="bottom" constant="8" id="Wtl-tm-KSI"/>
+                    <constraint firstItem="98r-s4-iVY" firstAttribute="top" secondItem="3di-a5-iZA" secondAttribute="top" constant="10" id="aAA-Md-SE9"/>
+                    <constraint firstItem="nxV-12-MwX" firstAttribute="leading" secondItem="3di-a5-iZA" secondAttribute="leading" id="avc-pg-MvD"/>
+                    <constraint firstItem="OwX-2b-TwE" firstAttribute="leading" secondItem="3di-a5-iZA" secondAttribute="leading" constant="10" id="kA5-lh-x9u"/>
+                    <constraint firstItem="D2l-fG-2MN" firstAttribute="leading" secondItem="OwX-2b-TwE" secondAttribute="leading" id="mlV-7K-lTD"/>
+                    <constraint firstAttribute="trailing" secondItem="98r-s4-iVY" secondAttribute="trailing" constant="10" id="oU9-fV-IEK"/>
+                    <constraint firstAttribute="bottom" secondItem="nxV-12-MwX" secondAttribute="bottom" id="qlR-W7-g6J"/>
+                    <constraint firstItem="lmH-Kf-Czr" firstAttribute="leading" secondItem="3di-a5-iZA" secondAttribute="leading" constant="10" id="rRt-2V-T9N"/>
+                    <constraint firstItem="OwX-2b-TwE" firstAttribute="trailing" secondItem="lmH-Kf-Czr" secondAttribute="trailing" id="tKO-cM-eS6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="airlineLabel" destination="lCZ-mq-fGx" id="r7v-g1-eo0"/>
+                <outlet property="departureDateLabel" destination="OwX-2b-TwE" id="19f-uE-BAG"/>
+                <outlet property="priceLabel" destination="98r-s4-iVY" id="YBX-wz-aQI"/>
+                <outlet property="separator" destination="nxV-12-MwX" id="oXE-Zd-41w"/>
+                <outlet property="sourceDestinationLabel" destination="lmH-Kf-Czr" id="60w-4k-2CI"/>
+                <outlet property="timeLabel" destination="D2l-fG-2MN" id="e0t-3r-3kd"/>
+            </connections>
+            <point key="canvasLocation" x="141.5" y="166.5"/>
+        </tableViewCell>
+    </objects>
+</document>

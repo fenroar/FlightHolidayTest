@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlightsViewController">
             <connections>
+                <outlet property="tableView" destination="4ZE-Eb-ezi" id="2Ug-Hb-CJy"/>
                 <outlet property="view" destination="PHK-1q-GMz" id="1Un-R2-xT2"/>
             </connections>
         </placeholder>
@@ -18,7 +19,19 @@
         <view contentMode="scaleToFill" id="PHK-1q-GMz">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ZE-Eb-ezi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4ZE-Eb-ezi" secondAttribute="trailing" id="EwF-UF-0JI"/>
+                <constraint firstItem="4ZE-Eb-ezi" firstAttribute="top" secondItem="PHK-1q-GMz" secondAttribute="top" id="JFn-Gv-d3r"/>
+                <constraint firstItem="4ZE-Eb-ezi" firstAttribute="leading" secondItem="PHK-1q-GMz" secondAttribute="leading" id="WZP-IR-nM7"/>
+                <constraint firstAttribute="bottom" secondItem="4ZE-Eb-ezi" secondAttribute="bottom" id="mxG-ss-e5S"/>
+            </constraints>
         </view>
     </objects>
 </document>

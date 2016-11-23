@@ -21,7 +21,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    FlightsViewController *flightsViewController = [[FlightsViewController alloc] initWithNibName:@"FlightsViewController" bundle:nil];
+    FlightsDataController *flightsDataController = [FlightsDataController new];
+    
+    FlightsViewController *flightsViewController = [[FlightsViewController alloc] initWithDataController:flightsDataController];
+    
     UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:flightsViewController];
     
     self.window.rootViewController = rootNavigationController;
