@@ -7,8 +7,10 @@
 //
 
 #import "FlightsViewController.h"
+#import "UIScrollView+EmptyDataSet.h"
+#import "EmptyView.h"
 
-@interface FlightsViewController ()
+@interface FlightsViewController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -30,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setContentOffset:CGPointZero animated:NO];
     [self setup];
 }
 
@@ -45,6 +48,9 @@
 - (void)setup {
     [super setup];
     
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    
     self.title = NSLocalizedString(@"Flights", @"FlightsViewController - Title");
 }
 
@@ -58,6 +64,32 @@
        
         [self handleResponse:response error:error];
     }];
+}
+
+#pragma mark - DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
+    return YES;
+}
+
+//- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+//    
+//}
+
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
+    
+    [scrollView layoutIfNeeded];
+    
+    EmptyView *emptyView = [[EmptyView alloc] initWithFrame:scrollView.frame];
+//    emptyView.translatesAutoresizingMaskIntoConstraints = false;
+
+//    NSLayoutConstraint *heightConstraint = [emptyView.leadingAnchor constraintEqualToAnchor:scrollView.leadingAnchor multiplier:0 constant:0];
+//    [heightConstraint setActive:YES];
+//    
+//    NSLayoutConstraint *widthConstraint = [emptyView.trailingAnchor constraintEqualToAnchor:scrollView.trailingAnchor multiplier:0 constant:0];
+//    [widthConstraint setActive:YES];
+    
+    return emptyView;
 }
 
 @end

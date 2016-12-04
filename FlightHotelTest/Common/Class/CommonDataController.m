@@ -14,6 +14,10 @@
     return @[];
 }
 
+- (void)reset {
+    
+}
+
 - (void)fetchData:(void (^ _Nullable)(id _Nullable response, NSError * _Nullable error))completionBlock {
     
 }

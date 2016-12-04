@@ -41,6 +41,8 @@
 		D0D907F61DE5AB850041A4D6 /* FlightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D907F51DE5AB850041A4D6 /* FlightsViewController.xib */; };
 		D0D907F91DE5AE430041A4D6 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907F81DE5AE430041A4D6 /* Hotel.m */; };
 		D0D907FC1DE5AF660041A4D6 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D907FB1DE5AF660041A4D6 /* Flight.m */; };
+		D0F2AE4D1DF4BD9F00F0990B /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F2AE4C1DF4BD9F00F0990B /* EmptyView.m */; };
+		D0F2AE4F1DF4BDA700F0990B /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F2AE4E1DF4BDA700F0990B /* EmptyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,9 @@
 		D0D907F81DE5AE430041A4D6 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
 		D0D907FA1DE5AF660041A4D6 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
 		D0D907FB1DE5AF660041A4D6 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
+		D0F2AE4B1DF4BD9F00F0990B /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		D0F2AE4C1DF4BD9F00F0990B /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		D0F2AE4E1DF4BDA700F0990B /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		D7299A03DD4F22C6F86C3F06 /* Pods-FlightHotelTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightHotelTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlightHotelTest/Pods-FlightHotelTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -343,6 +348,7 @@
 		D0D907EB1DE5AB0D0041A4D6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D0F2AE4A1DF4BD9600F0990B /* View */,
 				D03A42C61DE6590100C88642 /* Class */,
 				D03A42791DE5BB9100C88642 /* Category */,
 				D0D907EC1DE5AB0D0041A4D6 /* Models */,
@@ -396,6 +402,16 @@
 				D03A42A11DE5F09400C88642 /* HotelsViewController.xib */,
 			);
 			path = HotelsViewController;
+			sourceTree = "<group>";
+		};
+		D0F2AE4A1DF4BD9600F0990B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2AE4B1DF4BD9F00F0990B /* EmptyView.h */,
+				D0F2AE4C1DF4BD9F00F0990B /* EmptyView.m */,
+				D0F2AE4E1DF4BDA700F0990B /* EmptyView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F2AE4F1DF4BDA700F0990B /* EmptyView.xib in Resources */,
 				D03A42A71DE6342700C88642 /* HotelTableViewCell.xib in Resources */,
 				D0D907F61DE5AB850041A4D6 /* FlightsViewController.xib in Resources */,
 				D03A42871DE5C73500C88642 /* FlightsTableViewCell.xib in Resources */,
@@ -609,6 +626,7 @@
 				D03A42BF1DE643C200C88642 /* Booking.m in Sources */,
 				D0D907F41DE5AB770041A4D6 /* FlightsViewController.m in Sources */,
 				D03A42C41DE650C000C88642 /* UIViewController+Alert.m in Sources */,
+				D0F2AE4D1DF4BD9F00F0990B /* EmptyView.m in Sources */,
 				D0D907CB1DE5AA580041A4D6 /* AppDelegate.m in Sources */,
 				D03A42BA1DE63EB300C88642 /* MainViewController.m in Sources */,
 				D03A42A51DE6341B00C88642 /* HotelTableViewCell.m in Sources */,

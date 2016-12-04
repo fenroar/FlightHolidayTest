@@ -28,17 +28,25 @@
 
 #pragma mark - Public
 
+- (void)reset {
+    
+    self.flights = @[];
+}
+
 - (void)fetchData:(void (^)(id _Nullable, NSError * _Nullable))completionBlock {
     
-    if (self.flights.count > 0) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        if (completionBlock) {
-            completionBlock(self.flights, nil);
+        if (self.flights.count > 0) {
+            
+            if (completionBlock) {
+                completionBlock(self.flights, nil);
+            }
+        } else {
+            
+            [self refreshData:completionBlock];
         }
-    } else {
-        
-        [self refreshData:completionBlock];
-    }
+    });
     
 }
 

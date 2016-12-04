@@ -55,6 +55,8 @@
 
 - (IBAction)handleFlightButtonTap:(id)sender {
     
+    [self.flightsDataController reset];
+     
     FlightsViewController *flightsViewController = [[FlightsViewController alloc] initWithDataController:self.flightsDataController];
     
     [self.navigationController pushViewController:flightsViewController animated:YES];

@@ -50,9 +50,9 @@
     self.tableView.delegate = [self currentDataController];
     self.tableView.dataSource = [self currentDataController];
     
-    self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectZero];
-    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
+//    self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectZero];
+//    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+//    [self.tableView addSubview:self.refreshControl];
 }
 
 - (CommonDataController *)currentDataController {
